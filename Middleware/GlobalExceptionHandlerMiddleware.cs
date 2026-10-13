@@ -57,7 +57,6 @@ namespace BankingApi.Middleware
                     Title = "Validation Error",
                     Detail = validationEx.Message,
                     Instance = context.Request.Path,
-                    Extensions = { ["errors"] = validationEx.Errors }
                 },
                 CustomUnauthorizedAccessException customUnauthorizedAccessException =>new ProblemDetails
                 {

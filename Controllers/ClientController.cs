@@ -42,7 +42,7 @@ namespace BankingApi.Controllers
             }
             catch (Exception ex)
             {
-                throw new ValidationException($"Validation error occured when getting client by clientId = {currentUserId}");
+                throw new ValidationException($"Validation error occured when getting client by clientId = {currentUserId} : {ex.Message}");
             }
         }
 
@@ -61,7 +61,7 @@ namespace BankingApi.Controllers
             }
             catch(Exception ex)
             {
-                throw new ValidationException("Validation error occured when getting all clients");
+                throw new ValidationException($"Validation error occured when getting all clients : {ex.Message}");
             }
         }
 
@@ -81,7 +81,7 @@ namespace BankingApi.Controllers
             }
             catch(Exception ex)
             {
-                throw new ValidationException($"Validation error occured when searching clients by name = {name}");
+                throw new ValidationException($"Validation error occured when searching clients by name = {name} : {ex.Message}");
             }
         }
 
@@ -101,7 +101,7 @@ namespace BankingApi.Controllers
             }
             catch(Exception ex)
             {
-                throw new ValidationException($"Validation error occured when searching clients by ssn = {ssn}");
+                throw new ValidationException($"Validation error occured when searching clients by ssn = {ssn}: {ex.Message}");
             }
         }
 
@@ -126,7 +126,7 @@ namespace BankingApi.Controllers
             }
             catch(Exception ex)
             {
-                throw new ValidationException($"Validation error occured when getting client by clientId = {id}");
+                throw new ValidationException($"Validation error occured when getting client by clientId = {id}: {ex.Message}");
             }
         }
 
@@ -146,7 +146,7 @@ namespace BankingApi.Controllers
             }
             catch(Exception ex)
             {
-                               throw new ValidationException("Validation error occured when creating client");
+                               throw new ValidationException($"Validation error occured when creating client {ex.Message}" );
             }
 
         }
@@ -174,7 +174,7 @@ namespace BankingApi.Controllers
             }
             catch(Exception ex)
             {
-                throw new ValidationException($"Validation error occured when updating client with clientId = {id}");
+                throw new ValidationException($"Validation error occured when updating client with clientId = {id} : {ex.Message}");
             }
         }
 
